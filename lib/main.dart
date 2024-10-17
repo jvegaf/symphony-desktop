@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:bitsdojo_window/bitsdojo_window.dart';
-import 'package:dart_vlc/dart_vlc.dart';
+import 'package:media_kit/media_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart';
@@ -74,7 +74,7 @@ Future<void> main() async {
   }
 
   if (kIsWeb == false && Platform.isWindows || Platform.isLinux) {
-    DartVLC.initialize();
+    MediaKit.ensureInitialized();
   }
 
   //services

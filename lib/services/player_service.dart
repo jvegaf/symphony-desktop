@@ -1,8 +1,6 @@
-import 'dart:math';
-
 import 'package:collection/collection.dart';
-import 'package:dart_vlc/dart_vlc.dart';
 import 'package:get/get.dart';
+import 'package:media_kit/media_kit.dart';
 import 'package:symphony_desktop/data/models/song_model.dart';
 import 'package:symphony_desktop/data/repositories/player_service_repository.dart';
 
@@ -36,25 +34,24 @@ class PlayerService extends GetxService {
   @override
   void onInit() {
     super.onInit();
-    _player = Player(id: Random().nextInt(60000));
+    _player = Player();
 
-    _player.playbackStream.listen((PlaybackState state) {
-      _isPlaying.value = state.isPlaying;
+    _player.stream.playing.listen((bool playing) {
+      _isPlaying.value = playing;
     });
-    _player.positionStream.listen((PositionState state) {
-      _duration.value = state.duration ?? Duration.zero;
-      _position.value = state.position ?? Duration.zero;
+    _player.stream.position.listen((Duration position) {
+      _position.value = position;
     });
-    _player.bufferingProgressStream.listen((double state) {
-      _buffer.value = Duration(milliseconds: state.round());
+    _player.stream.duration.listen((Duration duration) {
+      _buffer.value = duration;
     });
-    _player.currentStream.listen((CurrentState state) {
-      if (state.index != null && _queue.value != null) {
-        _currentSong.value = _queue.value![state.index!];
+    _player.stream.playlist.listen((Playlist playlist) {
+      if (playlist.isBlank == false && _queue.value != null) {
+        _currentSong.value = _queue.value![playlist.index];
       }
     });
-    _player.generalStream.listen((GeneralState state) {
-      _volume.value = state.volume;
+    _player.stream.volume.listen((double volume) {
+      _volume.value = volume;
     });
   }
 
@@ -78,10 +75,10 @@ class PlayerService extends GetxService {
       );
 
       final Playlist playlist = Playlist(
-        medias: [for (Uri? url in urls) Media.network(url)],
+        [for (Uri? url in urls) Media(url.toString())],
       );
 
-      _player.open(playlist, autoStart: false);
+      _player.open(playlist, play: false);
     }
 
     if (_playlist.value != null) {
@@ -89,7 +86,7 @@ class PlayerService extends GetxService {
     }
 
     _player.play();
-    _player.jumpToIndex(index);
+    _player.jump(index);
   }
 
   void playOrPause() {
@@ -112,7 +109,7 @@ class PlayerService extends GetxService {
     if (_isRepeat.value == true) {
       _player.setPlaylistMode(PlaylistMode.loop);
     } else {
-      _player.setPlaylistMode(PlaylistMode.repeat);
+      _player.setPlaylistMode(PlaylistMode.single);
     }
 
     _isRepeat.value = !_isRepeat.value;
