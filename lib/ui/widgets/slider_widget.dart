@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:symphony_desktop/ui/themes/app_theme_extentions.dart';
+import 'package:symphony_desktop/ui/themes/app_theme_extensions.dart';
 import 'package:symphony_desktop/ui/widgets/buttons/icon_button_widget.dart';
 
 class SliderWidget extends StatefulWidget {

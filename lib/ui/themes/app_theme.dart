@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:symphony_desktop/ui/themes/app_dark_theme.dart';
 import 'package:symphony_desktop/ui/themes/app_light_theme.dart';
-import 'package:symphony_desktop/ui/themes/app_theme_extentions.dart';
+import 'package:symphony_desktop/ui/themes/app_theme_extensions.dart';
 
 abstract class AppTheme {
   static getTheme({required bool isDark}) {
@@ -35,7 +35,6 @@ abstract class AppTheme {
     }
 
     return baseTheme.copyWith(
-      useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
         seedColor: colors.primary,
         primary: colors.primary,
@@ -43,8 +42,8 @@ abstract class AppTheme {
         secondary: colors.secondary,
         onSecondary: colors.onSecondary,
         shadow: colors.shadow,
-        background: colors.background,
-        onBackground: colors.background,
+        surface: colors.background,
+        onSurface: colors.background,
       ),
       primaryColor: colors.primary,
       dividerColor: colors.border,

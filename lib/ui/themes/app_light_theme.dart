@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:symphony_desktop/ui/themes/app_theme_extentions.dart';
+import 'package:symphony_desktop/ui/themes/app_theme_extensions.dart';
 
 abstract class AppLightTheme {
   static final ThemeColors colors = ThemeColors(

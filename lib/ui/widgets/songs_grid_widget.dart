@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:symphony_desktop/data/models/song_model.dart';
 import 'package:symphony_desktop/services/player_service.dart';
-import 'package:symphony_desktop/ui/themes/app_theme_extentions.dart';
+import 'package:symphony_desktop/ui/themes/app_theme_extensions.dart';
 import 'package:symphony_desktop/ui/widgets/gap_widget.dart';
 import 'package:symphony_desktop/ui/widgets/text_widget.dart';
 

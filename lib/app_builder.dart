@@ -4,7 +4,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:symphony_desktop/routes/app_routes.dart';
 import 'package:symphony_desktop/services/navigation_service.dart';
 import 'package:symphony_desktop/services/player_service.dart';
-import 'package:symphony_desktop/ui/themes/app_theme_extentions.dart';
+import 'package:symphony_desktop/ui/themes/app_theme_extensions.dart';
 import 'package:symphony_desktop/ui/widgets/gap_widget.dart';
 import 'package:symphony_desktop/ui/widgets/player_widget.dart';
 import 'package:symphony_desktop/ui/widgets/sidebar_widget.dart';

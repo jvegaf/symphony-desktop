@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:symphony_desktop/services/player_service.dart';
-import 'package:symphony_desktop/ui/themes/app_theme_extentions.dart';
+import 'package:symphony_desktop/ui/themes/app_theme_extensions.dart';
 import 'package:symphony_desktop/ui/widgets/gap_widget.dart';
 import 'package:symphony_desktop/ui/widgets/header_widget.dart';
 import 'package:symphony_desktop/ui/widgets/screen_widget.dart';

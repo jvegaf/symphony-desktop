@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:symphony_desktop/ui/themes/app_theme_extentions.dart';
+import 'package:symphony_desktop/ui/themes/app_theme_extensions.dart';
 import 'package:symphony_desktop/ui/widgets/gap_widget.dart';
 import 'package:symphony_desktop/ui/widgets/text_widget.dart';
 

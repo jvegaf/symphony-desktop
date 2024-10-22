@@ -4,6 +4,7 @@ import 'package:symphony_desktop/routes/app_routes.dart';
 import 'package:symphony_desktop/ui/pages/library_page.dart';
 import 'package:symphony_desktop/ui/pages/queue_page.dart';
 import 'package:symphony_desktop/ui/pages/search_page.dart';
+import 'package:symphony_desktop/ui/pages/settings_page.dart';
 
 abstract class AppPages {
   static final List<GetPage> pages = [
@@ -15,6 +16,10 @@ abstract class AppPages {
     GetPage(
       name: AppRoutes.library,
       page: () => const LibraryPage(),
+    ),
+    GetPage(
+      name: AppRoutes.settings,
+      page: () => SettingsPage(),
     ),
     GetPage(
       name: AppRoutes.queue,

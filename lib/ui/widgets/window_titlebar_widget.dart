@@ -3,7 +3,7 @@ import 'dart:ui';
 
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
-import 'package:symphony_desktop/ui/themes/app_theme_extentions.dart';
+import 'package:symphony_desktop/ui/themes/app_theme_extensions.dart';
 
 class WindowsTitlebarWidget extends StatelessWidget {
   const WindowsTitlebarWidget({super.key});
